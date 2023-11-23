@@ -42,6 +42,47 @@ generate results reports, as well as being able to respond
 and kill or dump suspicious objects for a deep analysis&quot;
     </p>
   </div>
+
+
+
+
+
+
+<p>Number of Visitors: <span id="visitorCount">0</span></p>
+
+    <script>
+        // Function to increment the visitor count
+        function incrementVisitorCount() {
+            // Retrieve the current count from local storage
+            let count = localStorage.getItem('visitorCount');
+
+            // If count doesn't exist, set it to 0
+            if (!count) {
+                count = 0;
+            }
+
+            // Increment the count
+            count++;
+
+            // Update the count in local storage
+            localStorage.setItem('visitorCount', count);
+
+            // Update the count on the webpage
+            document.getElementById('visitorCount').innerText = count;
+        }
+
+        // Call the incrementVisitorCount function when the page loads
+        window.onload = incrementVisitorCount;
+    </script>
+
+
+
+
+
+
+
+
+  
 </center>
 </body>
 </html>
