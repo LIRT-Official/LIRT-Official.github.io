@@ -112,6 +112,10 @@
 }
 
 @media (max-width: 420px) {
+
+  .capabilities_section .box .img-box{
+  padding-left: 20px;
+}
   .capabilities_section .box {
     flex-direction: column;
   }
