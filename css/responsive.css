@@ -39,6 +39,9 @@
 
 
 @media (max-width: 768px) {
+  .imagelogo{
+    width: 30%;
+  }
   .team_section .team_container{
     padding-left: 35%;
     padding-right: 0px;
@@ -54,7 +57,9 @@
 
 
 @media (max-width: 576px) {
-
+  .imagelogo{
+    width: 30%;
+  }
   .team_section .team_container{
     padding-left: 0px;
     padding-right: 3px;
@@ -87,6 +92,9 @@
 }
 
 @media (max-width: 480px) {
+  .imagelogo{
+    width: 30%;
+  }
   .team_section .team_container{
     padding-left: 0px;
     padding-right: 3px;
@@ -113,9 +121,13 @@
 
 @media (max-width: 420px) {
 
-  .capabilities_section .box .img-box{
+  .imagelogo{
+    width: 30%;
+  }
+.capabilities_section .box .img-box{
   padding-left: 20px;
 }
+  
   .capabilities_section .box {
     flex-direction: column;
   }
