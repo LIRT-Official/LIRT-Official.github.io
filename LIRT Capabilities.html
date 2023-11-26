@@ -116,7 +116,7 @@
   <!-- capabilities section -->
 
 
-  <section class="capabilities_section layout_padding">
+  <section class="capabilities_section layout_padding  reveal active">
     <div class="capabilities_container">
       <div class="container ">
         <div class="heading_container heading_center">
@@ -130,7 +130,7 @@
         <div class="row">
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active ">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon1.png" alt="">
@@ -154,7 +154,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active ">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon2.png" alt="">
@@ -180,7 +180,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon3.png" alt="">
@@ -209,7 +209,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon4.png" alt="">
@@ -237,7 +237,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon5.png" alt="">
@@ -262,7 +262,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon6.png" alt="">
@@ -287,7 +287,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon7.png" alt="">
@@ -314,7 +314,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon8.png" alt="">
@@ -340,7 +340,7 @@
 
 
 
-          <div class="col-md-4 ">
+          <div class="col-md-4  reveal active">
             <div class="box ">
               <div class="img-box">
                 <img src="images/icon9.png" alt="">
@@ -361,7 +361,23 @@
 
 
 
+<script type="text/javascript">
+  window.addEventListener('scroll', reveal);
 
+  function reveal(){
+    var reveals =document.querySelectorAll('.reveal');
+    for(var i=0; i < reveals.length; i++){
+      var windowheight = window.innerHeight;
+      var revealtop = reveals[i].getBoundingClientRect().top;
+      var revealpoint = 50;
+      if(revealtop < windowheight - revealpoint){
+        reveals[i].classList.add('active');
+      }else{
+        reveals[i].classList.remove('active');
+      }
+    }
+  }
+</script>
           
 
   <!-- end capabilities section -->
@@ -482,6 +498,26 @@
   </script>
   <!-- End Google Map -->
 
+
+  
+
+  <script type="text/javascript">
+    window.addEventListener('scroll', reveal);
+  
+    function reveal(){
+      var reveals =document.querySelectorAll('.reveal');
+      for(var i=0; i < reveals.length; i++){
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }else{
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
