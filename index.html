@@ -69,6 +69,44 @@
 
 <body>
 
+  
+<!-- Start LOading Page -->
+
+<div id="preloader">
+  <img id="loading-image" src="images/logoloading.png" alt="Loading Image">
+  <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+  </div>
+</div>
+
+<script>
+  // Simulate a delay to represent content loading
+  setTimeout(function () {
+      document.body.classList.add('loaded');
+  }, 3000); // Adjust the timeout duration as needed
+
+  // Simulate progress bar
+  function simulateProgressBar() {
+      let progressBar = document.getElementById('progress-bar');
+      let width = 0;
+      let interval = setInterval(frame, 30);
+
+      function frame() {
+          if (width >= 100) {
+              clearInterval(interval);
+          } else {
+              width++;
+              progressBar.style.width = width + '%';
+          }
+      }
+  }
+
+  simulateProgressBar();
+</script>
+
+<!-- End LOading Page -->
+
+  <div class="content">
   <div class="hero_area">
 
     <div class="hero_bg_box">
@@ -1152,7 +1190,7 @@ Or install it from here.<br><a href="#" target="_blank" >Download .NET Framework
       }
     }
   </script>
-     
+        </div>
 </body>
 
 </html>
