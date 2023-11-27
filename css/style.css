@@ -1,4 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap");
+
+
+
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#loading-image {
+  width: 40%;  
+  margin-bottom: 20px;
+}
+
+#progress-bar-container {
+  width: 45%;
+  height: 7px;
+  background: #232425;
+  z-index: 999;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background: #ffffff;
+  transition: width 0.1s ease-in-out;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+body.loaded #preloader {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+body.loaded #progress-bar-container {
+  display: none;
+}
+
+body.loaded .content {
+  opacity: 1;
+}
+
+body.loaded {
+  overflow: visible;
+}
+
+
+
+/*-----------------------------------------------*/
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
