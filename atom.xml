@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <!-- Basic Feed Information -->
+  <title>LIRT - Live Incident Response Tool</title>
+  <subtitle>Official website of LIRT</subtitle>
+  <link href="https://lirt-official.github.io/" rel="alternate"/>
+  <id>https://lirt-official.github.io/</id>
+  <updated>2023-11-28T00:00:00Z</updated>
+
+  <!-- Author Information -->
+  <author>
+    <name>LIRT - Live Incident Response Tool</name>
+    <email>LIRT.Official@gmail.com</email>
+  </author>
+
+  <!-- Link to the HTML Version of the Feed -->
+  <link href="https://lirt-official.github.io/atom.xml" rel="self"/>
+
+  <!-- Entries (Add a new entry for each page) -->
+  <entry>
+    <title>Home</title>
+    <link href="https://lirt-official.github.io/" rel="alternate"/>
+    <id>https://lirt-official.github.io/</id>
+    <published>2023-11-28T00:00:00Z</published>
+    <updated>2023-11-28T00:00:00Z</updated>
+    <summary type="html">Home page of the LIRT Official website.</summary>
+    <content type="html">Full content of the home page, including HTML.</content>
+  </entry>
+
+  <entry>
+    <title>LIRT Capabilities</title>
+    <link href="https://lirt-official.github.io/LIRT%20Capabilities.html" rel="alternate"/>
+    <id>https://lirt-official.github.io/LIRT%20Capabilities.html</id>
+    <published>2023-11-28T00:00:00Z</published>
+    <updated>2023-11-28T00:00:00Z</updated>
+    <summary type="html">Description of LIRT capabilities.</summary>
+    <content type="html">Full content of the LIRT Capabilities page, including HTML.</content>
+  </entry>
+
+  <entry>
+    <title>Download LIRT</title>
+    <link href="https://lirt-official.github.io/Download%20LIRT.html" rel="alternate"/>
+    <id>https://lirt-official.github.io/Download%20LIRT.html</id>
+    <published>2023-11-28T00:00:00Z</published>
+    <updated>2023-11-28T00:00:00Z</updated>
+    <summary type="html">Information on how to download LIRT.</summary>
+    <content type="html">Full content of the Download LIRT page, including HTML.</content>
+  </entry>
+
+  <entry>
+    <title>Why Use LIRT</title>
+    <link href="https://lirt-official.github.io/Why%20Use%20LIRT.html" rel="alternate"/>
+    <id>https://lirt-official.github.io/Why%20Use%20LIRT.html</id>
+    <published>2023-11-28T00:00:00Z</published>
+    <updated>2023-11-28T00:00:00Z</updated>
+    <summary type="html">Reasons to use LIRT.</summary>
+    <content type="html">Full content of the Why Use LIRT page, including HTML.</content>
+  </entry>
+
+  <entry>
+    <title>LIRT Team</title>
+    <link href="https://lirt-official.github.io/LIRT%20Team.html" rel="alternate"/>
+    <id>https://lirt-official.github.io/LIRT%20Team.html</id>
+    <published>2023-11-28T00:00:00Z</published>
+    <updated>2023-11-28T00:00:00Z</updated>
+    <summary type="html">Information about the LIRT team.</summary>
+    <content type="html">Full content of the LIRT Team page, including HTML.</content>
+  </entry>
+
+  <!-- Add more entries for additional pages -->
+
+</feed>
