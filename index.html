@@ -4,7 +4,6 @@
 <head>
   <!--Start Meta Data -->
   <!-- Primary Meta Tags -->
-   <script src="https://apis.google.com/js/client.js"></script>
 <title>LIRT  - Live Incident Response Tool</title>
 <meta name="title" content="LIRT - Live Incident Response Tool" />
 <meta name="google-site-verification" content="DdMPXQ8loGJrsXUdU6MCS2Lj-Bulm9_CAI6EHizHSnM" />
@@ -1185,72 +1184,6 @@ Or install it from here.<br><a href="#" target="_blank" >Download .NET Framework
 
 <!-- Start Test-->
 
-
-          
-<h1>HOII</h1>
-<script>
-  // Set your API key and Google Analytics view ID
-  const apiKey = 'AIzaSyDctuj3867_Vto9PS2Gk9PoQ7FsL9p1b2k';
-  const viewId = '6402798160'; // Replace with your Google Analytics view ID
-
-  // Load the Google API client library
-  gapi.load('client', init);
-
-  // Initialize the Google API client
-  function init() {
-    gapi.client.init({
-      apiKey: apiKey,
-    }).then(function () {
-      // Execute an API request to get the number of visitors
-      gapi.client.request({
-        path: '/v4/reports:batchGet',
-        root: 'https://analyticsreporting.googleapis.com/',
-        method: 'POST',
-        body: {
-          reportRequests: [
-            {
-              viewId: viewId,
-              dateRanges: [
-                {
-                  startDate: '7daysAgo',
-                  endDate: 'today',
-                },
-              ],
-              metrics: [
-                { expression: 'ga:users' }, // Change to 'ga:sessions' if you want sessions instead of users
-              ],
-            },
-          ],
-        },
-      }).then(handleResponse, handleError);
-    });
-  }
-
-  // Handle the API response
-  function handleResponse(response) {
-    const report = response.result.reports[0];
-    const rows = report.data.rows;
-
-    if (rows && rows.length > 0) {
-      const visitors = rows[0].metrics[0].values[0];
-      displayVisitors(visitors);
-    } else {
-      console.error('No data found');
-    }
-  }
-
-  // Handle API errors
-  function handleError(error) {
-    console.error('API Error', error);
-  }
-
-  // Display the number of visitors on the page
-  function displayVisitors(visitors) {
-    const resultContainer = document.createElement('div');
-    resultContainer.innerHTML = `<h2>Number of Visitors: ${visitors}</h2>`;
-    document.body.appendChild(resultContainer);
-  }
-</script>
 
 
 <!-- END Test-->
