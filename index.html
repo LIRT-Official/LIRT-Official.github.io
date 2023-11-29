@@ -1185,15 +1185,27 @@ Or install it from here.<br><a href="#" target="_blank" >Download .NET Framework
 <!-- Start Test-->
 
 
-<h1>Website Visitors</h1>
-<p id="visitorsCount">Loading...</p>
-
-<!-- Include the Google API client library -->
-<script src="https://apis.google.com/js/api.js"></script>
+          <h1>Website Visitors</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Visitors</th>
+    </tr>
+  </thead>
+  <tbody id="visitorsTableBody">
+    <tr>
+      <td>Loading...</td>
+      <td>Loading...</td>
+    </tr>
+  </tbody>
+</table>
 
 <script>
-  // Your Google Analytics View ID
-  const viewId = '6402798160';
+  const trackingId = 'G-5YCKD5GK07';
+  const streamId = '6402798160';
+  const measurementId = 'G-5YCKD5GK07';
+  const apiKey = 'AIzaSyDctuj3867_Vto9PS2Gk9PoQ7FsL9p1b2k';
 
   // Load the JavaScript client library.
   gapi.load('client', initClient);
@@ -1201,20 +1213,46 @@ Or install it from here.<br><a href="#" target="_blank" >Download .NET Framework
   function initClient() {
     // Initialize the client with API key and authorize the client
     gapi.client.init({
-      'apiKey': 'AIzaSyDctuj3867_Vto9PS2Gk9PoQ7FsL9p1b2k',
+      'apiKey': apiKey,
     }).then(function() {
       return gapi.client.request({
-        'path': `https://www.googleapis.com/analytics/v3/data/ga?ids=ga:${viewId}&start-date=7daysAgo&end-date=today&metrics=ga:sessions`,
+        'path': `https://www.googleapis.com/analytics/data/v1beta/property/${measurementId}/stream/${streamId}:runReport`,
+        'method': 'POST',
+        'body': {
+          "dateRanges": [
+            {
+              "startDate": "7daysAgo",
+              "endDate": "today"
+            }
+          ],
+          "metrics": [
+            {
+              "name": "events"
+            }
+          ],
+        }
       });
     }).then(function(response) {
-      const data = response.result;
-      const visitorsCount = data.totalsForAllResults['ga:sessions'];
-      document.getElementById('visitorsCount').innerText = `Number of Visitors in the Last 7 Days: ${visitorsCount}`;
+      const data = response.result.rows || [];
+      const tableBody = document.getElementById('visitorsTableBody');
+      tableBody.innerHTML = ''; // Clear loading row
+
+      data.forEach(function(row) {
+        const date = row.dimensionValues[0].value;
+        const visitors = row.metricValues[0].value;
+
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${date}</td><td>${visitors}</td>`;
+        tableBody.appendChild(newRow);
+      });
     }).catch(function(reason) {
       console.error('Error: ' + reason.result.error.message);
     });
   }
 </script>
+
+<!-- Include the Google API client library -->
+<script src="https://apis.google.com/js/api.js"></script>
 
 
 <!-- END Test-->
