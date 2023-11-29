@@ -1178,7 +1178,52 @@ Or install it from here.<br><a href="#" target="_blank" >Download .NET Framework
       }
     }
   </script>
+
+
+
+
+<!-- Start Test-->
+
+
+<h1>Website Visitors</h1>
+<p id="visitorsCount">Loading...</p>
+
+<!-- Include the Google API client library -->
+<script src="https://apis.google.com/js/api.js"></script>
+
+<script>
+  // Your Google Analytics View ID
+  const viewId = '6402798160';
+
+  // Load the JavaScript client library.
+  gapi.load('client', initClient);
+
+  function initClient() {
+    // Initialize the client with API key and authorize the client
+    gapi.client.init({
+      'apiKey': 'AIzaSyDctuj3867_Vto9PS2Gk9PoQ7FsL9p1b2k',
+    }).then(function() {
+      return gapi.client.request({
+        'path': `https://www.googleapis.com/analytics/v3/data/ga?ids=ga:${viewId}&start-date=7daysAgo&end-date=today&metrics=ga:sessions`,
+      });
+    }).then(function(response) {
+      const data = response.result;
+      const visitorsCount = data.totalsForAllResults['ga:sessions'];
+      document.getElementById('visitorsCount').innerText = `Number of Visitors in the Last 7 Days: ${visitorsCount}`;
+    }).catch(function(reason) {
+      console.error('Error: ' + reason.result.error.message);
+    });
+  }
+</script>
+
+
+<!-- END Test-->
+
+
+          
         </div>
+
+        
 </body>
 
 </html>
