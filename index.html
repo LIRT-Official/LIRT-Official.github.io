@@ -1184,87 +1184,20 @@ Or install it from here.<br><a href="#" target="_blank" >Download .NET Framework
 
 <!-- Start Test-->
 
-
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Analytics API Example</title>
-</head>
-<body>
-
-<h1>Website Visitors</h1>
-<table border="1">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Visitors</th>
-    </tr>
-  </thead>
-  <tbody id="visitorsTableBody">
-    <tr>
-      <td>Loading...</td>
-      <td>Loading...</td>
-    </tr>
-  </tbody>
-</table>
-
-<script>
-  const trackingId = 'G-5YCKD5GK07';
-  const streamId = '6402798160';
-  const measurementId = 'G-5YCKD5GK07';
-  const apiKey = 'AIzaSyDctuj3867_Vto9PS2Gk9PoQ7FsL9p1b2k';
-
-  // Load the JavaScript client library.
-  gapi.load('client', initClient);
-
-  function initClient() {
-    // Initialize the client with API key and authorize the client
-    gapi.client.init({
-      'apiKey': apiKey,
-    }).then(function() {
-      return gapi.client.request({
-        'path': `https://www.googleapis.com/analytics/data/v1beta/property/${measurementId}/stream/${streamId}:runReport`,
-        'method': 'POST',
-        'body': {
-          "dateRanges": [
-            {
-              "startDate": "7daysAgo",
-              "endDate": "today"
-            }
-          ],
-          "metrics": [
-            {
-              "name": "sessions"
-            }
-          ],
-        }
-      });
-    }).then(function(response) {
-      const data = response.result.rows || [];
-      const tableBody = document.getElementById('visitorsTableBody');
-      tableBody.innerHTML = ''; // Clear loading row
-
-      data.forEach(function(row) {
-        const date = row.dimensionValues[0].value;
-        const visitors = row.metricValues[0].value;
-
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `<td>${date}</td><td>${visitors}</td>`;
-        tableBody.appendChild(newRow);
-      });
-    }).catch(function(reason) {
-      console.error('Error: ' + reason.result.error.message);
-    });
-  }
+<!-- Default Statcounter code for LIRT https://lirt-official.github.io/ -->
+<script type="text/javascript">
+var sc_project=12945083; 
+var sc_invisible=0; 
+var sc_security="f647921c"; 
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
 </script>
-
-<!-- Include the Google API client library -->
-<script src="https://apis.google.com/js/api.js"></script>
-
-</body>
-</html>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12945083/0/f647921c/0/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 
 
 <!-- END Test-->
